@@ -8,13 +8,23 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
+                    <h1>Your Listings</h1>
+                    @if(count($listings)>0)
+                         <table class="table table-striped">
+                             <tr>
+                                 <th>Company Name</th>
+                                 <th></th>
+                                 <th></th>
+                             </tr>
+                             @foreach($listings as $list)
+                             <tr>
+                                 <td>{{$list->name}}</td>
+                                 <td></td>
+                                 <td></td>
+                             </tr>
+                             @endforeach
+                         </table>
                     @endif
-
-                    You are logged in!
                 </div>
             </div>
         </div>
